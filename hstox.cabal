@@ -148,8 +148,11 @@ executable test-toxcore
   build-depends:    base < 5
   cc-options:
       -std=gnu99
+      -fsanitize=address
       -Wall
       -- -Werror
+  ld-options:
+      -fsanitize=address
   extra-libraries:  sodium, pthread
   include-dirs:
       test/toxcore/msgpack-c/include
